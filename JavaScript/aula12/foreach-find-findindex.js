@@ -1,4 +1,4 @@
-//ARRAY FOREACH
+//UTILIZANDO FOREACH
 //sintaxe: variavel.forEach (funçao aqui)
 
 const numeros = [10, 40, 58, 77, 62, 14]; //definindo array de numeros
