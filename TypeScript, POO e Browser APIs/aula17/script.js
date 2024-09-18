@@ -1,4 +1,5 @@
-var numero1 = 10;
-var numero2 = 20;
+"use strict";
+const numero1 = 10;
+const numero2 = 20;
 console.log("TypeScript");
 console.log(numero1 + numero2);
