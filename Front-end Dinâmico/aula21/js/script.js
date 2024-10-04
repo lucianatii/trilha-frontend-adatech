@@ -18,3 +18,46 @@ botaoDiminuir.addEventListener("click", (event) => {
 
   meuContador.textContent = valorAtual - 1;
 });
+
+//---------------------------------------------------------------
+//EVENTO INPUT: VISUALIZANDO O VALOR DIGITADO
+
+const input = document.querySelector("#meuInput");
+
+input.addEventListener("input", () => {
+  console.log(input.value);
+});
+
+//---------------------------------------------------------------
+//ADICIONANDO ELEMENTOS INLINE NO CONTADOR
+//ALTERANDO CSS COM JS (STYLE)
+
+meuContador.style.color = "purple";
+meuContador.style.padding = "4rem";
+// meuContador.style.backgroundColor = "pink";
+meuContador.style.width = "300px";
+meuContador.style.border = "2px solid blue";
+
+//---------------------------------------------------------------
+//MANIPULANDO CLASSES ATRAVÉS DE JS
+//classList permite adicionar ou remover classes de um elemento
+
+console.log(botaoDiminuir.classList); //inspecionando a classe do botao diminuir
+
+botaoAumentar.classList.add("btn"); //adiciona a classe btn ao botao aumentar sem modificar o html
+botaoDiminuir.classList.remove("btn"); //remove a classe btn do botao diminuir sem modificar o html
+
+//ALTERNANDO AS CORES DOS BOTÕES
+
+const botaoPrimeiro = document.querySelector("#primeiro");
+const botaoSegundo = document.querySelector("#segundo");
+
+botaoPrimeiro.addEventListener("click", (event) => {
+  botaoPrimeiro.classList.add("cor");
+  botaoSegundo.classList.remove("cor");
+});
+
+botaoSegundo.addEventListener("click", (event) => {
+  botaoPrimeiro.classList.remove("cor");
+  botaoSegundo.classList.add("cor");
+});
