@@ -66,10 +66,31 @@ botaoSegundo.addEventListener("click", (event) => {
 
 const botaoTheme = document.querySelector("#theme");
 
-let darkTheme = false; //variavel de controle - inicia como false, ou seja, modo escuro desligado
+let darkTheme; //variavel de controle - inicia como false, ou seja, modo escuro desligado
+
+//definindo função a ser executada no carregamento da página (salvando preferencia de tema)
+window.onload = () => {
+  const isDarkThemeStorage = localStorage.getItem("isDarkTheme");
+
+  darkTheme = isDarkThemeStorage === "true";
+
+  const body = document.querySelector("body");
+
+  if (darkTheme) {
+    body.style.backgroundColor = "black";
+    body.style.colorText = "white";
+  } else {
+    body.style.backgroundColor = "white";
+    body.style.colorText = "black";
+  }
+};
 
 botaoTheme.addEventListener("click", (event) => {
   darkTheme = !darkTheme; //darkTheme recebe o contrário dele
+
+  //salvando a preferência de tema no localStorage
+  localStorage.setItem("isDarkTheme", darkTheme);
+
   const body = document.querySelector("body");
 
   if (darkTheme) {
